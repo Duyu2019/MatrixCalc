@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class MatrixCalc {
     private double[][] matrix;
     private double[][] matrix2;
@@ -108,7 +109,25 @@ public class MatrixCalc {
         }
         return matrix3;
     }
+    public String toString() {
+        String result = "";
+        String result2 = "";
+        String result3 = "";
+        for(double[] a: matrix) {
+            result += Arrays.toString(a) + "\n";
+        }
+        for(double[] a: matrix2) {
+            result2 += Arrays.toString(a) + "\n";
+        }
+        for(double[] a: matrix3) {
+            result3 += Arrays.toString(a) + "\n";
+        }
+        return result + "\n" + result2 + "\n" + result3 + "\n";
+    }
     public static void main(String[] args) {
         MatrixCalc test = new MatrixCalc(3,3);
+        System.out.println(test);
+        test.MatrixFill(test.matrix);
+        System.out.println(test);
     }
 }
